@@ -1,0 +1,243 @@
+/* GOMISHOT 2.0 - Estilos Panel de Inventario */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0a0a;
+    border-bottom: 2px solid #ffa500;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo-text .highlight {
+    color: #ffa500;
+}
+
+.logout-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+    background-color: #ffa500;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+}
+
+/* Header */
+.header {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.disco {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: spin 15s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.5));
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+h1 {
+    color: #ffa500;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 3rem;
+    padding: 0 2rem 3rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Panel Buttons */
+.panel-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.boton {
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    color: #000;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(255, 165, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.boton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.boton:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.boton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+}
+
+.boton:active {
+    transform: translateY(-2px);
+}
+
+/* Osito Central */
+.osito-central {
+    width: 280px;
+    max-width: 90%;
+    height: auto;
+    margin-top: 2rem;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(255, 165, 0, 0.3));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logout-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .panel-buttons {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .boton {
+        font-size: 1.1rem;
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .osito-central {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 1rem;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .header {
+        margin-top: 2rem;
+    }
+    
+    .disco {
+        width: 80px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .main-container {
+        margin-top: 2rem;
+        gap: 2rem;
+        padding: 0 1rem 2rem;
+    }
+    
+    .boton {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+    }
+}

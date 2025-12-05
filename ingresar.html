@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GomiShots</title>
+    <link rel="stylesheet" href="styles/ingresar.css">
+    <style>
+        .error-msg {
+            background-color: #440000;
+            color: #ff6666;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ff0000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Gomi<span>Shots</span></div>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="#" class="activo">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="main-login">
+        <img src="img/disco.png" alt="Disco" class="disco">
+        
+        <form action="login.php" method="POST" class="formulario">
+            <h2>Iniciar Sesión</h2>
+            
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error) {
+                    let mensaje = '';
+                    switch(error) {
+                        case 'credenciales_incorrectas':
+                            mensaje = '❌ Usuario o contraseña incorrectos';
+                            break;
+                        case 'campos_vacios':
+                            mensaje = '❌ Complete todos los campos';
+                            break;
+                        default:
+                            mensaje = '❌ Error desconocido';
+                    }
+                    document.write('<div class="error-msg">' + mensaje + '</div>');
+                }
+            </script>
+            
+            <input type="text" 
+                   name="usuario" 
+                   placeholder="Usuario" 
+                   required 
+                   autocomplete="username"
+                   maxlength="50">
+            
+            <input type="password" 
+                   name="contrasena" 
+                   placeholder="Contraseña" 
+                   required 
+                   autocomplete="current-password"
+                   maxlength="100">
+            
+            <button type="submit" class="boton">Ingresar</button>
+            
+            <div style="text-align: center; margin-top: 15px; color: #999; font-size: 0.9rem;">
+                <p>Credenciales de prueba:</p>
+                <p>admin / 1234 | user / 2025</p>
+            </div>
+        </form>
+        
+        <img src="img/ositosparty.png" alt="Osito" class="osito">
+    </main>
+</body>
+</html>

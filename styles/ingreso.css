@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.top-bar {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo-text .highlight {
+    color: #ffa500;
+}
+
+.logout-link, .volver-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.logout-link:hover, .volver-link:hover {
+    text-decoration: underline;
+}
+
+.mensaje-exito {
+    background-color: #004400;
+    color: #00ff00;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    border-left: 4px solid #00ff00;
+}
+
+.mensaje-error {
+    background-color: #440000;
+    color: #ff6666;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    border-left: 4px solid #ff0000;
+}
+
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 1rem 2rem;
+    gap: 2rem;
+}
+
+.formulario {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.formulario h2 {
+    margin-bottom: 1rem;
+    color: #ffa500;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #ffa500;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+}
+
+select {
+    appearance: none;
+    outline: none;
+}
+
+.boton-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.boton {
+    background-color: #ffa500;
+    color: #000;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: #cc8400;
+}
+
+.tabla {
+    flex: 2;
+    min-width: 500px;
+}
+
+.tabla h3 {
+    color: #ffa500;
+    margin-bottom: 0.5rem;
+}
+
+.buscar {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ffa500;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th {
+    background-color: #111;
+    color: #ffa500;
+}
+
+@media (max-width: 768px) {
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tabla {
+        min-width: unset;
+        width: 100%;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .boton-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+}
