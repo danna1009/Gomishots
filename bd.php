@@ -7,10 +7,10 @@ $password = getenv('DB_PASSWORD');
 $dbname = getenv('DB_NAME');
 
 // Crear la conexión
-$conn = new mysqli($host, $username, $password, $dbname, $port);
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$username password=$password");
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if (!$conn) {
+    die("Conexión fallida: " . pg_last_error());
 }
 ?>
